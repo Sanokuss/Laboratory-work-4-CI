@@ -5,11 +5,16 @@ jobs:
   JavaScriptCodeLinter:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Code in Repository
-        uses: actions/checkout@v3
+      - name: Checkout Code
+        uses: actions/checkout@v4
 
-      - name: Install JSON Linter Biome
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install Biome
         run: npm install --save-dev --save-exact @biomejs/biome
 
-      - name: Validate all js-file
-        run: npx @biomejs/biome check *.js
+      - name: Run Biome Check
+        run: npx @biomejs/biome check .
