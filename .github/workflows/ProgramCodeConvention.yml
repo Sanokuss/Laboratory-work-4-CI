@@ -17,8 +17,4 @@ jobs:
         run: npm install --save-dev --save-exact @biomejs/biome
 
       - name: Run Biome Check
-<<<<<<< HEAD
         run: npx @biomejs/biome check .
-=======
-        run: npx @biomejs/biome check .
->>>>>>> baf6ba14837f89317c97f2c70496bd48352621d5
